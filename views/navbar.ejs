@@ -1,0 +1,120 @@
+<div class="d-flex flex-row-reverse">
+    <button class="btn shadow-none" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+        <i class="fa fa-bars shadow-none"></i>
+    </button>
+</div>
+
+<div class="offcanvas offcanvas-end w-auto" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
+        <button type="button" class="btn-close text-reset shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body" style="margin-left:auto">
+        <ul class="navbar-nav justify-content-end flex-grow-1
+            pe-3">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page"
+                    href="/account">Account</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page"
+                    href="/stock">Trade</a>
+            </li>
+            <!--
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Dropdown
+                </a>
+                <ul class="dropdown-menu justify-content-end">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another
+                            action</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Something
+                            else here</a></li>
+                </ul>
+            </li>
+            -->
+        </ul>
+    </div>
+</div>
+
+<!--
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+    <div class="offcanvas-header">
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" style="margin-left:auto"></button>
+    </div>
+    <div class="offcanvas-body" style="margin-left:auto">
+        <ul class="navbar-nav justify-content-end flex-grow-1
+            pe-3">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page"
+                    href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Dropdown
+                </a>
+                <ul class="dropdown-menu justify-content-end">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another
+                            action</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Something
+                            else here</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+-->
+
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            var offcanvasElements = [].slice.call(document.querySelectorAll('.offcanvas'));
+            offcanvasElements.map(function (offcanvasEl) {
+                var offcanvas = new bootstrap.Offcanvas(offcanvasEl, {
+                    backdrop: false // This will remove the backdrop
+                });
+                offcanvasEl.addEventListener('shown.bs.offcanvas', function () {
+                    var backdrops = [].slice.call(document.querySelectorAll('.offcanvas-backdrop'));
+                    backdrops.map(function (backdrop) {
+                        backdrop.remove();
+                    });
+                });
+            });
+        });
+    </script>
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
+        <style>
+            .offcanvas {
+                transition: transform 0.4s ease-in-out;
+            }
+    
+            .offcanvas-backdrop {
+                opacity: 0 !important;
+            }
+        </style>
